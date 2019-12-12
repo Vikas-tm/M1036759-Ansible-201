@@ -1,0 +1,9 @@
+---
+- name: install apache
+  hosts: centos 
+  roles:
+  - dev-sec.os-hardening
+  - apache
+  - sshLoginSecure
+  - cronjob
+  - randomization

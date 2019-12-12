@@ -1,0 +1,11 @@
+---
+# tasks file for randomization
+- name: "OS must implement address space layout randomization to protect its memory from unauthorized code execution"
+  sysctl:
+     name: kernel.randomize_va_space
+     value: "2"
+     state: present
+     reload: yes
+     ignoreerrors: yes
+  notify: reboot system
+

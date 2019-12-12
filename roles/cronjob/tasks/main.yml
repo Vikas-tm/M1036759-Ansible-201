@@ -1,0 +1,7 @@
+---
+# tasks file for cronjob
+- name: Cron job for weekly reeboot
+  cron: 
+    name: Weekly reboot
+    special_time: weekly
+    job: "/sbin/reboot now"

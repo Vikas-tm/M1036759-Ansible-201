@@ -1,0 +1,15 @@
+---
+- name: Add files to local repository
+  shell: git add .
+  args:
+    chdir: /home/ubuntu/anoop/learn-ansible/final
+
+- name: Commit changes
+  shell: git commit -m "new release"
+  args:
+    chdir: /home/ubuntu/anoop/learn-ansible/final
+
+- name: Push to repo
+  shell: git push {{ origin }} master
+  args:
+    chdir: /home/ubuntu/anoop/learn-ansible/final

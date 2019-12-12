@@ -1,0 +1,11 @@
+---
+# tasks file for sshLoginSecure
+- name: "Dont allow empty password for ssh login"
+  lineinfile:
+     state: present
+     dest: /etc/ssh/sshd_config
+     regexp: ^#?PermitEmptyPasswords
+     line: PermitEmptyPasswords no
+     validate: sshd -tf %s
+  notify: restart sshd
+

@@ -1,0 +1,12 @@
+---
+# tasks file for apache
+- name: install apache
+  yum: name=httpd state=present
+
+- name: copy index.html
+  template: src=index.html.j2 dest={{apache_docroot}}/index.html
+
+- name: copy httpd config file
+  template: src=httpd.conf.j2 dest={{apache_configroot}}/httpd.conf
+  notify:
+  - Restart Apache

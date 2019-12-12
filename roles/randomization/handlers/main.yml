@@ -1,0 +1,4 @@
+---
+# handlers file for randomization
+- name: reboot system
+  command: "/sbin/shutdown -r now"  
